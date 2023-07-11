@@ -8,6 +8,7 @@ import cors from "cors";
 import categoryRouter from "./routes/category.js";
 import userRouter from "./routes/users.js";
 import orderRouter from "./routes/order.js";
+import registerAuthRouter from "./routes/registerAuth.js";
 import { authJwt } from "./helper/jwt.js";
 
 const app = express();
@@ -24,6 +25,7 @@ app.use(`/${api}/product`, productRouter);
 app.use(`/${api}/category`, categoryRouter);
 app.use(`/${api}/auth`, userRouter);
 app.use(`/${api}/order`, orderRouter);
+app.use(`/${api}/registerAuth`, registerAuthRouter);
 
 mongoose.set("strictQuery", false);
 mongoose
